@@ -8,7 +8,6 @@ library(SingleR)
 library(celldex)
 library(clusterProfiler)
 library(org.Mm.eg.db)
-library(scrapper)
 
 set.seed(23)
 
