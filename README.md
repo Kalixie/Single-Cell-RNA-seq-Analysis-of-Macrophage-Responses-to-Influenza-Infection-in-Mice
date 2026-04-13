@@ -16,6 +16,14 @@ Differential expression analysis between macrophages at D02 and D05 was performe
 
 The single cell RNA sequencing dataset was obtained from Kazer et al. 2025 (https://doi.org/10.1016/j.immuni.2024.06.005), which profiled nasal immune responses to primary influenza A virus infection across three nasal tissues, Respiratory Mucosa (RM), Olfactory Mucosa (OM), and Lateral Nasal Gland (LNG) at five different timepoints, Naive, 2, 5, 8, and 14 days after infection (dpi). The dataset used was in the form of a pre-processed Seurat object and loaded directly into R using readRDS(). All analyses were performed in R (v. 4.5.3) using Seurat (v. 5.0) (Hao et al., 2024).
 
+### Quality control
+
+Quality control was performed to remove low quality cells prior to analysis. Mitochondrial gene content was calculated for each cell using PercentageFeatureSet() with the pattern "^mt-" , for the mouse genome (Mus musculus). Cells were kept in the data if they expressed more than 200 genes and had less than 15% mitochondrial reads. Gene expression counts were normalized using NormalizeData() with the default log normalization method. Highly variable features were identified using FindVariableFeatures(), data was then scaled using ScaleData(), and principal component analysis was performed using RunPCA(). The number of significant principal components was assessed using an elbow plot generated with ElbowPlot(), and the top 30 PCs were used for downstream analysis.
+
+### Batch correction and integration
+
+To correct for batch effects across samples, data integration was performed using Harmony (Korsunsky et al., 2019) with the IntegrateLayers() function in Seurat with method = HarmonyIntegration, using the PCA data as input. Layers were rejoined after integration using JoinLayers() prior to clustering.
+
 
 
 ## Results
