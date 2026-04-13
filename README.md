@@ -14,6 +14,13 @@ Differential expression analysis between macrophages at D02 and D05 was performe
 
 ## Results
 
+The majority of cells in the Seurat object displayed between 1,000 and 3,500 detected genes (nFeature_RNA), total molecules between 5,000 and 8,000 (nCount_RNA), and most mitochondrial transcripts appeared below 10%. The distributions were consistent across all timepoints as the data was likely pre-processed by the original authors. After filtering thresholds were applied the distributions were mostly unchanged suggesting that the data is of high quality.
+
+After normalization, integration, and clustering, a UMAP plot revealed 36 distinct cell populations. Cells formed well separated clusters with minimal overlap between groups. Coloring cells by tissue of origin showed that all three tissues including Respiratory Mucosa (RM), Olfactory Mucosa (OM), and Lateral Nasal Gland (LNG) contributed cells across most clusters, with some tissue specific clustering visible such as in the later annotated neuronal cluster which was predominantly OM derived. Coloring by timepoint showed that all five timepoints were distributed across all clusters without strong separation by timepoint, indicating that Harmony integration properly corrected for batch effects and that cells clustered by cell type rather than sample.
+
+Automated cell type annotation using SingleR with the MouseRNAseqData reference assigned labels to 13 identified clusters. Cell populations included Macrophages, Monocytes, T cells, NK cells, B cells, Granulocytes, Neurons, Fibroblasts, Epithelial cells, Endothelial cells, Erythrocytes, and Adipocytes. Separation was clear between most of the groups, although Fibroblasts had a spread out structure. Feature plots of marker genes specific to cell clusters confirmed the annotation assignments with Cd3d expression in the T cell cluster, Cd19 in the B cell cluster, Adgre1 in the Macrophage cluster, and Omp showed strong specific expression in the Neuron cluster consistent with the presence of olfactory sensory neurons.
+
+
 ## Discussion
 
 ## References
