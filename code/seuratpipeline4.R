@@ -15,13 +15,13 @@ set.seed(23)
 
 seurat_obj <- readRDS("seurat_ass4.rds")
 
-#seurat_obj <- readRDS("checkpoint_annotated.rds")
+# seurat_obj <- readRDS("checkpoint_annotated.rds")
 
 head(seurat_obj@meta.data)
 
 # Map metadata to standard names
 
-seurat_obj$tissue    <- seurat_obj$organ_custom
+seurat_obj$tissue <- seurat_obj$organ_custom
 seurat_obj$timepoint <- seurat_obj$time
 
 table(seurat_obj$tissue)
@@ -40,8 +40,9 @@ dev.off()
 # Filter based on thresholds
 
 seurat_obj <- subset(seurat_obj,
-                     subset = nFeature_RNA > 200 &
-                              percent.mt < 15)
+  subset = nFeature_RNA > 200 &
+    percent.mt < 15
+)
 
 png("images/qc_after_filter.png", width = 900, height = 500)
 VlnPlot(seurat_obj, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
@@ -141,7 +142,7 @@ saveRDS(seurat_obj, "checkpoint_annotated.rds")
 
 # Feature plot, genes of interest ----
 
-# Markers to validate annotation 
+# Markers to validate annotation
 
 png("images/featureplot_markers.png", width = 900, height = 700)
 FeaturePlot(seurat_obj, features = c("Cd3d", "Cd19", "Adgre1", "Omp"))
@@ -158,26 +159,28 @@ macro <- subset(seurat_obj, idents = "Macrophages")
 
 macro <- subset(macro, subset = timepoint %in% c("D02", "D05"))
 
-# Pseudobulk aggregation 
+# Pseudobulk aggregation
 
 macro <- subset(macro, subset = mouse_id != "")
 table(macro$mouse_id)
 
 pseudo_macro <- AggregateExpression(macro,
-                                    assays = "RNA",
-                                    return.seurat = TRUE,
-                                    group.by = c("mouse_id", "timepoint"))
+  assays = "RNA",
+  return.seurat = TRUE,
+  group.by = c("mouse_id", "timepoint")
+)
 
-# Create identity column 
+# Create identity column
 
 Idents(pseudo_macro) <- "timepoint"
 
 # DE with DESeq2
 macro.de <- FindMarkers(pseudo_macro,
-                        ident.1 = "D02",
-                        ident.2 = "D05",
-                        test.use = "DESeq2",
-                        verbose = FALSE)
+  ident.1 = "D02",
+  ident.2 = "D05",
+  test.use = "DESeq2",
+  verbose = FALSE
+)
 
 head(macro.de, n = 10)
 write.csv(macro.de, "DE_Macrophages_D02_vs_D05.csv")
@@ -187,19 +190,21 @@ macro.de$gene <- rownames(macro.de)
 
 png("images/vlnplot_DE_genes.png", width = 800, height = 500)
 VlnPlot(macro,
-        features = c("C1qb", "Isg15"),
-        group.by = "timepoint",
-        pt.size = 0)
+  features = c("C1qb", "Isg15"),
+  group.by = "timepoint",
+  pt.size = 0
+)
 dev.off()
-
 
 # GSEA ----
 
 # Convert gene symbols to Entrez IDs
+
 gene_df <- bitr(rownames(macro.de),
-                fromType = "SYMBOL",
-                toType   = "ENTREZID",
-                OrgDb    = org.Mm.eg.db)
+  fromType = "SYMBOL",
+  toType   = "ENTREZID",
+  OrgDb    = org.Mm.eg.db
+)
 
 macro.de <- left_join(macro.de, gene_df, by = c("gene" = "SYMBOL"))
 
@@ -217,7 +222,7 @@ gsea_result <- gseGO(
   pvalueCutoff = 0.05
 )
 
-png("images/gsea_ridgeplot.png", width = 900, height = 700)
+png("images/gsea_ridgeplot.png", width = 900, height = 1000)
 ridgeplot(gsea_result) + ggtitle("GSEA: Macrophages D02 vs D05")
 dev.off()
 
@@ -259,4 +264,39 @@ png("images/ora_dotplot_D05.png", width = 800, height = 600)
 dotplot(ego_D05) + ggtitle("ORA: Genes Upregulated in Macrophages at D05")
 dev.off()
 
+# ORA Comparison plot
 
+compare_GO <- function(df) {
+  up_genes <- df %>%
+    filter(p_val_adj < 0.05 & avg_log2FC > 0) %>%
+    pull(gene) %>%
+    na.omit() %>%
+    unique()
+
+  down_genes <- df %>%
+    filter(p_val_adj < 0.05 & avg_log2FC < 0) %>%
+    pull(gene) %>%
+    na.omit() %>%
+    unique()
+
+  compare_df <- compareCluster(
+    geneCluster = list(
+      Upregulated = up_genes,
+      Downregulated = down_genes
+    ),
+    fun = "enrichGO",
+    OrgDb = org.Mm.eg.db,
+    keyType = "SYMBOL",
+    ont = "BP",
+    pvalueCutoff = 0.05
+  )
+
+  return(compare_df)
+}
+
+
+comp <- compare_GO(macro.de)
+
+png("images/ora_compare_dotplot.png", width = 900, height = 700)
+dotplot(comp) + ggtitle("GO Comparison: Up vs Downregulated Genes")
+dev.off()
