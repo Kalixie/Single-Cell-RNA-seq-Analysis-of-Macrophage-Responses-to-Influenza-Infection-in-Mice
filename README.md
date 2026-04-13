@@ -34,7 +34,7 @@ Automated cell type annotation was performed using SingleR (v. 2.1.0) (Aran et a
 
 ### Differential expression analysis
 
-Differential expression analysis was performed to identify genes significantly differentially expressed in macrophages between day 2 at peak viral load and day 5 at the myeloid recruitment phase following influenza infection. Macrophage cells were first subset from the annotated dataset and filtered to include only D02 and D05 timepoints. A pseudobulk approach was implemented by aggregating gene expression counts by mouse ID and timepoint. Differential expression analysis was then conducted using DESeq2 via the FindMarkers() function in Seurat. Expression patterns of selected genes of interest were visualized using violin plots.
+Differential expression analysis was performed to identify genes significantly differentially expressed in macrophages between day 2 at peak viral load and day 5 at the myeloid recruitment phase following influenza infection. Macrophage cells were first subset from the annotated dataset and filtered to include only D02 and D05 timepoints. A pseudobulk approach was used by aggregating gene expression counts by mouse ID and timepoint. Differential expression analysis was then conducted using DESeq2 via the FindMarkers() function in Seurat. Expression patterns of selected genes of interest were visualized using violin plots.
 
 ### Functional enrichment analysis
 
