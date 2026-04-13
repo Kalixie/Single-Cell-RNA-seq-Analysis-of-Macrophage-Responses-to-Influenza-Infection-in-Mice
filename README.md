@@ -10,3 +10,10 @@ To analyze the dataset used, a computational pipeline was implemented using esta
 
 Differential expression analysis between macrophages at D02 and D05 was performed using a pseudobulk approach with DESeq2 (Love et al., 2014). Functional enrichment was conducted through the use of Gene Set Enrichment Analysis (GSEA) and over-representation analysis (ORA) implemented in clusterProfiler (Yu et al., 2012), enabling biological interpretation of the transcriptional differences between timepoints.
   
+## Methods
+
+## Results
+
+## Discussion
+
+## References
