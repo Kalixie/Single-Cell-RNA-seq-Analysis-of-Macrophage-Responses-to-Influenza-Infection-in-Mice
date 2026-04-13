@@ -51,4 +51,9 @@ Automated cell type annotation using SingleR with the MouseRNAseqData reference 
 
 ## Discussion
 
+Clustering revealed well separated cell populations, suggesting that transcriptional differences between cell types were clearly distinct between cells in the data. Although 36 clusters were identified pre-annotation, only 13 clusters were annotated automatically by SingleR, potentially influenced by the resolution. Despite this, annotated clusters were well separated and closely aligned with the results reference dataset paper by Kazer et al, with distinct groupings of Macrophages, Monocytes, T cells, NK cells, B cells, Granulocytes, Neurons, Fibroblasts, Epithelial cells, and Endothelial cells with variation likely due to filtering and annotation dataset differences between pipelines (Kazer et al., 2024) . 
+
+The annotation of neuronal cells within the olfactory mucosa is consistent with the presence of olfactory sensory neurons, further confirmed through the feature plot of Olfactory Marker Protein (Omp) identified in the Neuron cluster, which is present in mature olfactory sensory neurons (Gong, 2012).
+
+
 ## References
