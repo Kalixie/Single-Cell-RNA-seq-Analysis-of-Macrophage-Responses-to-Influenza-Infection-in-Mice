@@ -14,7 +14,7 @@ Differential expression analysis between macrophages at D02 and D05 was performe
 
 ## Data collection 
 
-The single cell RNA sequencing dataset was obtained from Kazer et al. (2025) (https://doi.org/10.1016/j.immuni.2024.06.005), which profiled nasal immune responses to primary influenza A virus infection across three nasal tissues, Respiratory Mucosa (RM), Olfactory Mucosa (OM), and Lateral Nasal Gland (LNG) at five different timepoints, Naive, 2, 5, 8, and 14 days after infection (dpi). The dataset used was in the form of a pre-processed Seurat object and loaded directly into R using readRDS(). All analyses were performed in R (v. 4.5.3) using Seurat (v. 5.0) (Hao et al., 2024).
+The single cell RNA sequencing dataset was obtained from Kazer et al. 2025 (https://doi.org/10.1016/j.immuni.2024.06.005), which profiled nasal immune responses to primary influenza A virus infection across three nasal tissues, Respiratory Mucosa (RM), Olfactory Mucosa (OM), and Lateral Nasal Gland (LNG) at five different timepoints, Naive, 2, 5, 8, and 14 days after infection (dpi). The dataset used was in the form of a pre-processed Seurat object and loaded directly into R using readRDS(). All analyses were performed in R (v. 4.5.3) using Seurat (v. 5.0) (Hao et al., 2024).
 
 
 
