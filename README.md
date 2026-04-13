@@ -38,6 +38,8 @@ Differential expression analysis was performed to identify genes significantly d
 
 ### Functional enrichment analysis
 
+Functional enrichment was performed using the clusterProfiler (v. 4.16.0) package (Yu et al., 2012). The org.Mm.eg.db mouse annotation database was used for analysis. Gene Set Enrichment Analysis was performed using gseGO() on the ranked gene list for DESeq2 compared with Gene Ontology Biological Process terms and a p-value cutoff of 0.05. Results were visualized as a ridge plot using ridgeplot(). Over-representation analysis was performed on significantly upregulated genes at each timepoint using enrichGO(). ORA results were visualized using a dot plot.
+
 ## Results
 
 The majority of cells in the Seurat object displayed between 1,000 and 3,500 detected genes (nFeature_RNA), total molecules between 5,000 and 8,000 (nCount_RNA), and most mitochondrial transcripts appeared below 10%. The distributions were consistent across all timepoints as the data was likely pre-processed by the original authors. After filtering thresholds were applied the distributions were mostly unchanged suggesting that the data is of high quality.
