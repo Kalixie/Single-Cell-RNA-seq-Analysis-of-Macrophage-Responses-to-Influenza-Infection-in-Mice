@@ -28,7 +28,7 @@ To correct for batch effects across samples, data integration was performed usin
 
 Cell clustering was performed using FindNeighbors() and FindClusters() in Seurat, using the harmony corrected data with dims = 1:30 and a resolution of 0.5. Uniform Manifold Approximation and Projection (UMAP) was performed using RunUMAP() for visualization. Clusters were visualized using DimPlot(), colored by cluster, tissue of origin, and timepoint.
 
-### Cell type annotation
+### Cell cluster annotation
 
 Automated cell type annotation was performed using SingleR (v. 2.1.0) (Aran et al., 2019) with the MouseRNAseqData reference from the celldex package. Annotation was performed at the cluster level, which assigned a single label per cluster based on the reference dataset. Predicted labels were mapped back to individual cells and stored in the celltype metadata column. Annotations were validated by examining feature plots of canonical cell type marker genes including Cd3d, Cd19, Adgre1, and Omp.
 
