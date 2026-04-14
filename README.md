@@ -128,5 +128,8 @@ Validation of cell type assignments using canonical marker genes further support
 
 Pseudobulk differential expression analysis between macrophages at D02 and D05 identified 5 genes significantly upregulated at D02 and 18 genes significantly upregulated at D05. The greater number of genes upregulated at D05 compared to D02 suggests a higher transcriptional response at the peak myeloid recruitment phase, results consistent with the more active antiviral response expected at this timepoint. Myeloid cells, such as monocytes and macrophages, produce inflammatory cytokines such as IL-12 which initiate an immune response cascade and lead to the recruitment of adaptive T-cells (Stegalmeier et al., 2019).
 
+GSEA revealed high levels of enrichment between Macrophage pathways when contrasting D02 with D05. When coming both times, the resulting GSEA plot displayed negative log2FC changes throughout the plot, which suggests downregulation in D02 in comparison to D05, therefore the pathways were upregulated in D05. Antiviral and interferon related pathways were notably at D05, including response to virus, defense response to virus, regulation of viral process, response to type I interferon, and microtubule transport related pathways. These findings support previous studies noting that macrophages produce and respond to type 1 interferons as part of the innate immune response, leading to increased interferon stimulated genes and the further recruitment of immune cells (Subramani et al., 2022).
+
+
 
 ## References
