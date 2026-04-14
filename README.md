@@ -50,7 +50,7 @@ Functional enrichment was performed using the clusterProfiler (v. 4.16.0) packag
 
 ##### Figure 1: Quality control violin plot after filtering. The violin plot shows the distribution of number of detected genes (nFeature_RNA), total UMI counts (nCount_RNA), and mitochondrial transcript percentage (percent.mt) across all five timepoints D02, D05, D08, D14, after applying nFeature_RNA > 200 and percent.mt < 15% (bottom).
 
-The majority of cells in the Seurat object displayed between 1,000 and 3,500 detected genes (nFeature_RNA), total molecules between 5,000 and 8,000 (nCount_RNA), and most mitochondrial transcripts appeared below 10%. The distributions were consistent across all timepoints as the data was likely pre-processed by the original authors. After filtering thresholds were applied the distributions were mostly unchanged suggesting that the data is of high quality.
+The majority of cells in the Seurat object displayed between 1,000 and 3,500 detected genes (nFeature_RNA), total molecules between 5,000 and 8,000 (nCount_RNA), and most mitochondrial transcripts appeared below 10%. The distributions were consistent across all timepoints, as the data was likely pre-processed by the original authors. After filtering, thresholds were applied, and the distributions were mostly unchanged, suggesting that the data is of high quality (Figure 1).
 
 <div align="center">
 
@@ -76,7 +76,7 @@ The majority of cells in the Seurat object displayed between 1,000 and 3,500 det
 
 ##### Figure 4: UMAP plot colored by timepoint post-infection. Cells are colored by the timepoint at which they were collected, including Naive in magenta, D02 in red, D05 in yellow, D08 in green, and D14 in blue. The mixing of timepoints within clusters indicates successful batch correction by Harmony integration.
 
-After normalization, integration, and clustering, a UMAP plot revealed 36 distinct cell populations. Cells formed well separated clusters with minimal overlap between groups. Coloring cells by tissue of origin showed that all three tissues including Respiratory Mucosa (RM), Olfactory Mucosa (OM), and Lateral Nasal Gland (LNG) contributed cells across most clusters, with some tissue specific clustering visible such as in the later annotated neuronal cluster which was predominantly OM derived. Coloring by timepoint showed that all five timepoints were distributed across all clusters without strong separation by timepoint, indicating that Harmony integration properly corrected for batch effects and that cells clustered by cell type rather than sample.
+After normalization, integration, and clustering, a UMAP plot revealed 36 distinct cell populations. Cells formed well-separated clusters with minimal overlap between groups (Figure 2). Coloring cells by tissue of origin showed that all three tissues including Respiratory Mucosa (RM), Olfactory Mucosa (OM), and Lateral Nasal Gland (LNG) contributed cells across most clusters, with some tissue specific clustering visible such as in the later annotated neuronal cluster which was predominantly OM-derived (Figure 3). Coloring by timepoint showed that all five timepoints were distributed across all clusters without strong separation by timepoint, indicating that Harmony integration properly corrected for batch effects and that cells clustered by cell type rather than sample (Figure 4).
 
 <div align="center">
 
@@ -92,9 +92,9 @@ After normalization, integration, and clustering, a UMAP plot revealed 36 distin
 
 </div>
 
-##### Figure 6: Feature plots of cell type marker genes. Expression of Cd3d (T cells), Cd19 (B cells), Adgre1 (macrophages), and Omp (olfactory sensory neurons) projected onto the UMAP embedding. Color intensity in purple reflects expression level. Grey indicates no detected expression within the cluster.
+##### Figure 6: Feature plots of cell type marker genes. Expression of Cd3d (T cells), Cd19 (B cells), Adgre1 (macrophages), and Omp (olfactory sensory neurons) projected onto the UMAP embedding. Color intensity in purple reflects the expression level. Grey indicates no detected expression within the cluster.
 
-Automated cell type annotation using SingleR with the MouseRNAseqData reference assigned labels to 13 identified clusters. Cell populations included Macrophages, Monocytes, T cells, NK cells, B cells, Granulocytes, Neurons, Fibroblasts, Epithelial cells, Endothelial cells, Erythrocytes, and Adipocytes. Separation was clear between most of the groups, although Fibroblasts had a spread out structure. Feature plots of marker genes specific to cell clusters confirmed the annotation assignments with Cd3d expression in the T cell cluster, Cd19 in the B cell cluster, Adgre1 in the Macrophage cluster, and Omp showed strong specific expression in the Neuron cluster consistent with the presence of olfactory sensory neurons.
+Automated cell type annotation using SingleR with the MouseRNAseqData reference assigned labels to 12 identified clusters. Cell populations included Macrophages, Monocytes, T cells, NK cells, B cells, Granulocytes, Neurons, Fibroblasts, Epithelial cells, Endothelial cells, Erythrocytes, and Adipocytes (Figure 5). Separation was clear between most of the groups, although Fibroblasts had a spread-out structure. Feature plots of marker genes specific to cell clusters confirmed the annotation assignments with Cd3d expression in the T cell cluster, Cd19 in the B cell cluster, Adgre1 in the Macrophage cluster, and Omp showed strong specific expression in the Neuron cluster, consistent with the presence of olfactory sensory neurons (Figure 6).
 
 <div align="center">
 
@@ -110,9 +110,9 @@ Automated cell type annotation using SingleR with the MouseRNAseqData reference 
 
 </div>
 
-Pseudobulk differential expression analysis using DESeq2 identified genes significantly changed in Macrophages between D02 and D05. Gene Set Enrichment Analysis of all ranked differentially expressed genes in macrophages between D02 and D05 revealed enrichment of multiple biological processes at D05 (Figure 7). All pathways displayed negative normalized enrichment scores, displaying large upregulation of genes at D05 relative to D02. 
+Pseudobulk differential expression analysis using DESeq2 identified genes significantly changed in Macrophages between D02 and D05. Gene Set Enrichment Analysis of all ranked differentially expressed genes in macrophages between D02 and D05 revealed enrichment of multiple biological processes at D05 (Figure 7). All pathways displayed negative normalized enrichment scores, and a large upregulation of genes at D05 relative to D02. 
 
-##### Figure 8: Over-Representation Analysis (ORA) dot plot of genes significantly upregulated in macrophages at D02 relative to D05. Gene Ontology Biological Process terms are shown on the y-axis. Dot size shows the gene ratio and color depicts adjusted p-value.
+##### Figure 8: Over-Representation Analysis (ORA) dot plot of genes significantly upregulated in macrophages at D02 relative to D05. Gene Ontology Biological Process terms are shown on the y-axis. Dot size shows the gene ratio, and color depicts the adjusted p-value.
 
 <div align="center">
 
@@ -126,7 +126,7 @@ Overrepresentation analysis of significantly upregulated genes at D02 revealed e
 
 ## Discussion
 
-Clustering revealed well separated cell populations, suggesting that transcriptional differences between cell types were clearly distinct between cells in the data. Although 36 clusters were identified pre-annotation, only 12 clusters were annotated automatically by SingleR, potentially influenced by the resolution. Despite this, annotated clusters were well separated and closely aligned with the results reference dataset paper by Kazer et al, with distinct groupings of Macrophages, Monocytes, T cells, NK cells, B cells, Granulocytes, Neurons, Fibroblasts, Epithelial cells, and Endothelial cells with variation likely due to filtering and annotation dataset differences between pipelines (Kazer et al., 2024). The presence of all five timepoints across clusters in the timepoint UMAP confirmed that Harmony integration properly removed sample level variation, and that clustering reflected biological cell identities rather than batch effects. Batch effects can lead to improper conclusions that are not based on biological data by clustering incorrectly, therefore correctness is required for proper downstream analysis (Yu et al., 2024). 
+Clustering revealed well-separated cell populations, suggesting that transcriptional differences between cell types were clearly distinct between cells in the data. Although 36 clusters were identified pre-annotation, only 12 clusters were annotated automatically by SingleR, potentially influenced by the resolution. Despite this, annotated clusters were well separated and closely aligned with the results reference dataset paper by Kazer et al, with distinct groupings of Macrophages, Monocytes, T cells, NK cells, B cells, Granulocytes, Neurons, Fibroblasts, Epithelial cells, and Endothelial cells with variation likely due to filtering and annotation dataset differences between pipelines (Kazer et al., 2024). The presence of all five timepoints across clusters in the timepoint UMAP confirmed that Harmony integration properly removed sample level variation, and that clustering reflected biological cell identities rather than batch effects. Batch effects can lead to improper conclusions that are not based on biological data by clustering incorrectly, therefore correctness is required for proper downstream analysis (Yu et al., 2024). 
 
 Validation of cell type assignments using canonical marker genes further supported the accuracy of the annotation. The annotation of neuronal cells within the olfactory mucosa is consistent with the presence of olfactory sensory neurons, further confirmed through the feature plot of Olfactory Marker Protein (Omp) identified in the Neuron cluster, which is present in mature olfactory sensory neurons (Gong, 2012). The expression patterns of Cd3d, Cd19, and Adgre1 correspond to T cells, B cells, and macrophages, respectively, further supporting the results of the annotation. 
 
