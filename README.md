@@ -18,7 +18,7 @@ The single cell RNA sequencing dataset was obtained from Kazer et al. 2025 (http
 
 ### Quality control
 
-Quality control was performed to remove low quality cells prior to analysis. Mitochondrial gene content was calculated for each cell using PercentageFeatureSet() with the pattern "^mt-" , for the mouse genome (Mus musculus). Cells were kept in the data if they expressed more than 200 genes and had less than 15% mitochondrial reads. Gene expression counts were normalized using NormalizeData() with the default log normalization method. Highly variable features were identified using FindVariableFeatures(), data was then scaled using ScaleData(), and principal component analysis was performed using RunPCA(). The number of significant principal components was assessed using an elbow plot generated with ElbowPlot(), and the top 30 PCs were used for downstream analysis.
+Quality control was performed to remove low-quality cells prior to analysis. Mitochondrial gene content was calculated for each cell using PercentageFeatureSet() with the pattern "^mt-" , for the mouse genome (Mus musculus). Cells were kept in the data if they expressed more than 200 genes and had less than 15% mitochondrial reads. Gene expression counts were normalized using NormalizeData() with the default log normalization method. Highly variable features were identified using FindVariableFeatures(), data was then scaled using ScaleData(), and principal component analysis was performed using RunPCA(). The number of significant principal components was assessed using an elbow plot generated with ElbowPlot(), and the top 30 PCs were used for downstream analysis.
 
 ### Batch correction and integration
 
@@ -38,7 +38,7 @@ Differential expression analysis was performed to identify genes significantly d
 
 ### Functional enrichment analysis
 
-Functional enrichment was performed using the clusterProfiler (v. 4.16.0) package (Yu et al., 2012). The org.Mm.eg.db mouse annotation database was used for analysis. Gene Set Enrichment Analysis was performed using gseGO() on the ranked gene list for DESeq2 compared with Gene Ontology Biological Process terms and a p-value cutoff of 0.05. Results were visualized as a ridge plot using ridgeplot(). Over-representation analysis was performed on significantly upregulated genes at each timepoint using enrichGO(). ORA results were visualized using a dot plot.
+Functional enrichment was performed using the clusterProfiler (v. 4.16.0) package (Yu et al., 2012). The org.Mm.eg.db mouse annotation database was used for analysis. Gene Set Enrichment Analysis was performed using gseGO() on the ranked gene list for DESeq2 (Love et al., 2014) compared with Gene Ontology Biological Process terms and a p-value cutoff of 0.05. Results were visualized as a ridge plot using ridgeplot(). Over-representation analysis was performed on significantly upregulated genes at each time point using enrichGO(). ORA results were visualized using a dot plot.
 
 ## Results
 
