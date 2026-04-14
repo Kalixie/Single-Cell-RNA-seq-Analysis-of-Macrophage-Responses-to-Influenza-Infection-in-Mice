@@ -58,7 +58,7 @@ The majority of cells in the Seurat object displayed between 1,000 and 3,500 det
 
 </div>
 
-##### Figure 2: 
+##### Figure 2: Figure 2: UMAP plot of all cells colored by cluster number. Each point represents a single cell following Uniform Manifold Approximation and Projection and Harmony integration. Cluster numbers are displayed for each cluster.
 
 <div align="center">
 
@@ -66,7 +66,7 @@ The majority of cells in the Seurat object displayed between 1,000 and 3,500 det
 
 </div>
 
-##### Figure 3: 
+##### Figure 3: Figure 3: UMAP plot colored by tissue of origin. Cells are colored by the tissue from which they were collected, including Respiratory Mucosa (RM) in blue, Olfactory Mucosa (OM) in green, and Lateral Nasal Gland (LNG) in red. Overlap can be seen by the multicoloured sections throughout sections of the plot. 
 
 <div align="center">
 
@@ -74,7 +74,7 @@ The majority of cells in the Seurat object displayed between 1,000 and 3,500 det
 
 </div>
 
-##### Figure 4: 
+##### Figure 4: UMAP plot colored by timepoint post-infection. Cells are colored by the timepoint at which they were collected, including Naive in magenta, D02 in red, D05 in yellow, D08 in green, and D14 in blue. The mixing of timepoints within clusters indicates successful batch correction by Harmony integration.
 
 After normalization, integration, and clustering, a UMAP plot revealed 36 distinct cell populations. Cells formed well separated clusters with minimal overlap between groups. Coloring cells by tissue of origin showed that all three tissues including Respiratory Mucosa (RM), Olfactory Mucosa (OM), and Lateral Nasal Gland (LNG) contributed cells across most clusters, with some tissue specific clustering visible such as in the later annotated neuronal cluster which was predominantly OM derived. Coloring by timepoint showed that all five timepoints were distributed across all clusters without strong separation by timepoint, indicating that Harmony integration properly corrected for batch effects and that cells clustered by cell type rather than sample.
 
@@ -84,7 +84,7 @@ After normalization, integration, and clustering, a UMAP plot revealed 36 distin
 
 </div>
 
-##### Figure 5: 
+##### Figure 5: UMAP plot colored by automated cell type annotation. Cell type labels were assigned using SingleR with the MouseRNAseqData reference and annotated at the cluster level. Twelve distinct cell populations were identified and can be distinguished by colour and label.
 
 <div align="center">
 
@@ -92,7 +92,7 @@ After normalization, integration, and clustering, a UMAP plot revealed 36 distin
 
 </div>
 
-##### Figure 6: 
+##### Figure 6: Feature plots of cell type marker genes. Expression of Cd3d (T cells), Cd19 (B cells), Adgre1 (macrophages), and Omp (olfactory sensory neurons) projected onto the UMAP embedding. Color intensity in purple reflects expression level. Grey indicates no detected expression within the cluster.
 
 Automated cell type annotation using SingleR with the MouseRNAseqData reference assigned labels to 13 identified clusters. Cell populations included Macrophages, Monocytes, T cells, NK cells, B cells, Granulocytes, Neurons, Fibroblasts, Epithelial cells, Endothelial cells, Erythrocytes, and Adipocytes. Separation was clear between most of the groups, although Fibroblasts had a spread out structure. Feature plots of marker genes specific to cell clusters confirmed the annotation assignments with Cd3d expression in the T cell cluster, Cd19 in the B cell cluster, Adgre1 in the Macrophage cluster, and Omp showed strong specific expression in the Neuron cluster consistent with the presence of olfactory sensory neurons.
 
@@ -102,7 +102,7 @@ Automated cell type annotation using SingleR with the MouseRNAseqData reference 
 
 </div>
 
-##### Figure 7: 
+##### Figure 7: Gene Set Enrichment Analysis (GSEA) ridge plot for macrophages comparing D02 vs D05. Gene sets from Gene Ontology Biological Process are shown ranked by enrichment score. Distributions shifted toward positive values indicate enrichment at D02 while distributions shifted toward negative values indicate enrichment at D05. Color indicates adjusted p-value.
 
 <div align="center">
 
@@ -110,7 +110,7 @@ Automated cell type annotation using SingleR with the MouseRNAseqData reference 
 
 </div>
 
-##### Figure 8: 
+##### Figure 8: Over-Representation Analysis (ORA) dot plot of genes significantly upregulated in macrophages at D02 relative to D05. Gene Ontology Biological Process terms are shown on the y-axis. Dot size shows the gene ratio and color depicts adjusted p-value.
 
 <div align="center">
 
@@ -118,7 +118,7 @@ Automated cell type annotation using SingleR with the MouseRNAseqData reference 
 
 </div>
 
-##### Figure 9: 
+##### Figure 9. Over-Representation Analysis (ORA) dot plot of genes significantly upregulated in macrophages at D05 relative to D02. Gene Ontology Biological Process terms are shown on the y-axis. Dot size shows the gene ratio and color depicts adjusted p-value.
 
 ## Discussion
 
