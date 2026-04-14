@@ -34,7 +34,7 @@ table(seurat_obj$timepoint)
 seurat_obj[["percent.mt"]] <- PercentageFeatureSet(seurat_obj, pattern = "^mt-")
 
 png("images/qc_before_filter.png", width = 900, height = 500)
-VlnPlot(seurat_obj, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
+VlnPlot(seurat_obj, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3, pt.size = 0)
 dev.off()
 
 # Filter based on thresholds
@@ -45,7 +45,7 @@ seurat_obj <- subset(seurat_obj,
 )
 
 png("images/qc_after_filter.png", width = 900, height = 500)
-VlnPlot(seurat_obj, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
+VlnPlot(seurat_obj, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3, pt.size = 0)
 dev.off()
 
 # Normalization
