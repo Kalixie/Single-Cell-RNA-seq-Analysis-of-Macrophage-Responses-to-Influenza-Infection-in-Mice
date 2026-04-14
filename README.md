@@ -48,7 +48,7 @@ Functional enrichment was performed using the clusterProfiler (v. 4.16.0) packag
 
 </div>
 
-##### Figure 1: Quality control violin plot after filtering. The violin plot shows the distribution of the number of detected genes (nFeature_RNA), total UMI counts (nCount_RNA), and mitochondrial transcript percentage (percent.mt) across all five timepoints D02, D05, D08, D14, after applying nFeature_RNA > 200 and percent.mt < 15% (bottom).
+##### Figure 1: Quality control violin plot after filtering. The violin plot shows the distribution of the number of detected genes (nFeature_RNA), total UMI counts (nCount_RNA), and mitochondrial transcript percentage (percent.mt) across all five timepoints: naive, D02, D05, D08, D14, after applying nFeature_RNA > 200 and percent.mt < 15% (bottom).
 
 The majority of cells in the Seurat object displayed between 1,000 and 3,500 detected genes (nFeature_RNA), total molecules between 5,000 and 8,000 (nCount_RNA), and most mitochondrial transcripts appeared below 10%. The distributions were consistent across all timepoints, as the data was likely pre-processed by the original authors. After filtering, thresholds were applied, and the distributions were mostly unchanged, suggesting that the data is of high quality (Figure 1).
 
