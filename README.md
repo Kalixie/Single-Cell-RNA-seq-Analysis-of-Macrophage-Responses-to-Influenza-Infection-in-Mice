@@ -130,6 +130,43 @@ Pseudobulk differential expression analysis between macrophages at D02 and D05 i
 
 GSEA revealed high levels of enrichment between Macrophage pathways when contrasting D02 with D05. When coming both times, the resulting GSEA plot displayed negative log2FC changes throughout the plot, which suggests downregulation in D02 in comparison to D05, therefore the pathways were upregulated in D05. Antiviral and interferon related pathways were notably at D05, including response to virus, defense response to virus, regulation of viral process, response to type I interferon, and microtubule transport related pathways. These findings support previous studies noting that macrophages produce and respond to type 1 interferons as part of the innate immune response, leading to increased interferon stimulated genes and the further recruitment of immune cells (Subramani et al., 2022).
 
+Genes upregulated at D05 for over representation analysis were enriched for response to virus, macrophage activation involved in immune response, and various metabolic processes confirming that macrophages at peak myeloid recruitment are upregulated transcriptionally for antiviral defense. The enrichment of nucleotide metabolic processes including pyrimidine deoxyribonucleotide and deoxyribonucleotide metabolic processes at D05 may also reflect increased cellular proliferation associated with macrophage activation (O'Neill et al., 2016). Genes upregulated at D02 were enriched for actin filament organization, bone resorption, and tissue and bone related pathways. Actin transport systems are used in the trafficking of viruses, which potentially supports what is seen at D02 as infection reaches peak viral load (Jiang et al., 2025). Previous studies have noted that viral infections can impact bone homeostasis potentially supporting the upregulation of bone resorption pathways (Caetano et al., 2024).
 
+There are several limitations in this analysis that can be improved in future works. Cell type annotation was performed using the MouseRNAseqData general reference rather than the tissue label transfer approach used by Kazer et al. (2025), which may have resulted in the slightly varying annotation results seen. The analysis was restricted to macrophages at two timepoints, and future analyses could extend to other cell types and timepoints. Overall, the transcriptional changes observed in macrophages between D02 and D05 are generally biologically consistent with the known progression of innate immune responses during influenza infection.
 
 ## References
+
+Aran, D., Looney, A. P., Liu, L., Wu, E., Fong, V., Hsu, A., Chak, S., Naikawadi, R. P., Wolters, P. J., Abate, A. R., Butte, A. J., & Bhattacharya, M. (2019). Reference-based analysis of lung single-cell sequencing reveals a transitional profibrotic macrophage. Nature Immunology, 20(2), 163–172. https://doi.org/10.1038/s41590-018-0276-y
+
+Bouvier, N. M., & Palese, P. (2008). The biology of influenza viruses. Vaccine, 26(Suppl 4), D49–D53. https://doi.org/10.1016/j.vaccine.2008.07.039
+
+Caetano, C. C. S., Azamor, T., Meyer, N. M., Onwubueke, C., Calabrese, C. M., Calabrese, L. H., Visperas, A., Piuzzi, N. S., Husni, M. E., Foo, S. S., & Chen, W. (2024). Mechanistic insights into bone remodelling dysregulation by human viral pathogens. Nature Microbiology, 9(2), 322–335. https://doi.org/10.1038/s41564-023-01586-6
+
+Gong, Q. (2012). Culture of mouse olfactory sensory neurons. Current Protocols in Neuroscience, 58(1), Unit 3.24. https://doi.org/10.1002/0471142301.ns0324s58
+
+Hao, Y., Stuart, T., Kowalski, M. H., Choudhary, S., Hoffman, P., Hartman, A., Srivastava, A., Molla, G., Madad, S., Fernandez-Granda, C., & Satija, R. (2024). Dictionary learning for integrative, multimodal and scalable single-cell analysis. Nature Biotechnology, 42(2), 293–304. https://doi.org/10.1038/s41587-023-01767-y
+
+Javanian, M., Barary, M., Ghebrehewet, S., Koppolu, V., Vasigala, V., & Ebrahimpour, S. (2021). A brief review of influenza virus infection. Journal of Medical Virology, 93(8), 4638–4646. https://doi.org/10.1002/jmv.26990
+
+Jiang, M., Zou, J., Jin, Y., Jiang, C., Tu, S., Chen, T., Guo, J., Cheng, Y., Jin, M., Chen, H., & Zhou, H. (2025). Adducin-1 facilitates influenza virus endosomal trafficking and uncoating by regulating branched actin dynamics and myosin IIB activity. Advanced Science, 12(28), e2417318. https://doi.org/10.1002/advs.202417318
+
+Kazer, S. W., Match, C. M., Langan, E. M., Messou, M. A., LaSalle, T. J., O'Leary, E., Marbourg, J., Naughton, K., von Andrian, U. H., & Ordovas-Montanes, J. (2024). Primary nasal influenza infection rewires tissue-scale memory response dynamics. Immunity, 57(8), 1955–1974.e8. https://doi.org/10.1016/j.immuni.2024.06.005
+
+Korsunsky, I., Millard, N., Fan, J., Slowikowski, K., Zhang, F., Wei, K., Baglaenko, Y., Brenner, M., Loh, P. R., & Raychaudhuri, S. (2019). Fast, sensitive and accurate integration of single-cell data with Harmony. Nature Methods, 16(12), 1289–1296. https://doi.org/10.1038/s41592-019-0619-0
+
+Latino, I., & Gonzalez, S. F. (2021). Spatio-temporal profile of innate inflammatory cells and mediators during influenza virus infection. Current Opinion in Physiology, 19, 175–186. https://doi.org/10.1016/j.cophys.2020.10.008
+
+Li, H., Wang, A., Zhang, Y., & Wei, F. (2023). Diverse roles of lung macrophages in the immune response to influenza A virus. Frontiers in Microbiology, 14, 1260543. https://doi.org/10.3389/fmicb.2023.1260543
+
+Love, M. I., Huber, W., & Anders, S. (2014). Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biology, 15(12), 550. https://doi.org/10.1186/s13059-014-0550-8
+
+O'Neill, L. A., & Pearce, E. J. (2016). Immunometabolism governs dendritic cell and macrophage function. Journal of Experimental Medicine, 213(1), 15–23. https://doi.org/10.1084/jem.20151570
+
+Stegelmeier, A. A., van Vloten, J. P., Mould, R. C., Klafuric, E. M., Minott, J. A., Wootton, S. K., Bridle, B. W., & Karimi, K. (2019). Myeloid cells during viral infections and inflammation. Viruses, 11(2), 168. https://doi.org/10.3390/v11020168
+
+Subramani, A., Hite, M. E. L., Garcia, S., Maxwell, J., Kondee, H., Millican, G. E., McClelland, E. E., Seipelt-Thiemann, R. L., & Nelson, D. E. (2023). Regulation of macrophage IFNγ-stimulated gene expression by the transcriptional coregulator CITED1. Journal of Cell Science, 136(1), jcs260529. https://doi.org/10.1242/jcs.260529
+
+Yu, G., Wang, L. G., Han, Y., & He, Q. Y. (2012). clusterProfiler: An R package for comparing biological themes among gene clusters. OMICS: A Journal of Integrative Biology, 16(5), 284–287. https://doi.org/10.1089/omi.2011.0118
+
+Yu, Y., Mai, Y., Zheng, Y., & Shi, L. (2024). Assessing and mitigating batch effects in large-scale omics studies. Genome Biology, 25(1), 254. https://doi.org/10.1186/s13059-024-03401-9
+
