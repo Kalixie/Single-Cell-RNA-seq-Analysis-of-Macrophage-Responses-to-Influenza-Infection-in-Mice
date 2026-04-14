@@ -110,6 +110,8 @@ Automated cell type annotation using SingleR with the MouseRNAseqData reference 
 
 </div>
 
+Pseudobulk differential expression analysis using DESeq2 identified genes significantly changed in Macrophages between D02 and D05. Gene Set Enrichment Analysis of all ranked differentially expressed genes in macrophages between D02 and D05 revealed enrichment of multiple biological processes at D05 (Figure 7). All pathways displayed negative normalized enrichment scores, displaying large upregulation of genes at D05 relative to D02. 
+
 ##### Figure 8: Over-Representation Analysis (ORA) dot plot of genes significantly upregulated in macrophages at D02 relative to D05. Gene Ontology Biological Process terms are shown on the y-axis. Dot size shows the gene ratio and color depicts adjusted p-value.
 
 <div align="center">
@@ -119,6 +121,8 @@ Automated cell type annotation using SingleR with the MouseRNAseqData reference 
 </div>
 
 ##### Figure 9. Over-Representation Analysis (ORA) dot plot of genes significantly upregulated in macrophages at D05 relative to D02. Gene Ontology Biological Process terms are shown on the y-axis. Dot size shows the gene ratio and color depicts adjusted p-value.
+
+Overrepresentation analysis of significantly upregulated genes at D02 revealed enrichment of pathways related to actin filament organization, regulation of bone resorption, bone remodeling, regulation of tissue remodeling, and cellular pigmentation (Figure 8). ORA of significantly upregulated genes at D05 showed enrichment of response to virus as the most significant pathway, along with macrophage activation involved in immune response, and several nucleotide metabolic processes (Figure 9).
 
 ## Discussion
 
