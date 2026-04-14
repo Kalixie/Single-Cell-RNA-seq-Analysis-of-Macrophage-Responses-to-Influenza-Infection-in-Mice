@@ -70,8 +70,37 @@ The majority of cells in the Seurat object displayed between 1,000 and 3,500 det
 
 After normalization, integration, and clustering, a UMAP plot revealed 36 distinct cell populations. Cells formed well separated clusters with minimal overlap between groups. Coloring cells by tissue of origin showed that all three tissues including Respiratory Mucosa (RM), Olfactory Mucosa (OM), and Lateral Nasal Gland (LNG) contributed cells across most clusters, with some tissue specific clustering visible such as in the later annotated neuronal cluster which was predominantly OM derived. Coloring by timepoint showed that all five timepoints were distributed across all clusters without strong separation by timepoint, indicating that Harmony integration properly corrected for batch effects and that cells clustered by cell type rather than sample.
 
+<div align="center">
+
+![fig5](https://github.com/Kalixie/Single-Cell-RNA-seq-Analysis-of-Macrophage-Responses-to-Influenza-Infection-in-Mice/blob/main/figures/umap_celltype.png)
+
+</div>
+
+<div align="center">
+
+![fig6](https://github.com/Kalixie/Single-Cell-RNA-seq-Analysis-of-Macrophage-Responses-to-Influenza-Infection-in-Mice/blob/main/figures/featureplot_markers.png)
+
+</div>
+
 Automated cell type annotation using SingleR with the MouseRNAseqData reference assigned labels to 13 identified clusters. Cell populations included Macrophages, Monocytes, T cells, NK cells, B cells, Granulocytes, Neurons, Fibroblasts, Epithelial cells, Endothelial cells, Erythrocytes, and Adipocytes. Separation was clear between most of the groups, although Fibroblasts had a spread out structure. Feature plots of marker genes specific to cell clusters confirmed the annotation assignments with Cd3d expression in the T cell cluster, Cd19 in the B cell cluster, Adgre1 in the Macrophage cluster, and Omp showed strong specific expression in the Neuron cluster consistent with the presence of olfactory sensory neurons.
 
+<div align="center">
+
+![fig7](https://github.com/Kalixie/Single-Cell-RNA-seq-Analysis-of-Macrophage-Responses-to-Influenza-Infection-in-Mice/blob/main/figures/gsea_ridgeplot.png)
+
+</div>
+
+<div align="center">
+
+![fig8](https://github.com/Kalixie/Single-Cell-RNA-seq-Analysis-of-Macrophage-Responses-to-Influenza-Infection-in-Mice/blob/main/figures/ora_dotplot_D02.png)
+
+</div>
+
+<div align="center">
+
+![fig9](https://github.com/Kalixie/Single-Cell-RNA-seq-Analysis-of-Macrophage-Responses-to-Influenza-Infection-in-Mice/blob/main/figures/ora_dotplot_D05.png)
+
+</div>
 
 ## Discussion
 
