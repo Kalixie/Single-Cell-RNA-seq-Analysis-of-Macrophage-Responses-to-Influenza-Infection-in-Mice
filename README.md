@@ -42,6 +42,12 @@ Functional enrichment was performed using the clusterProfiler (v. 4.16.0) packag
 
 ## Results
 
+<div align="center">
+
+![fig1](https://github.com/Kalixie/Single-Cell-RNA-seq-Analysis-of-Macrophage-Responses-to-Influenza-Infection-in-Mice/blob/main/figures/qc_after_filter.png)
+
+</div>
+
 The majority of cells in the Seurat object displayed between 1,000 and 3,500 detected genes (nFeature_RNA), total molecules between 5,000 and 8,000 (nCount_RNA), and most mitochondrial transcripts appeared below 10%. The distributions were consistent across all timepoints as the data was likely pre-processed by the original authors. After filtering thresholds were applied the distributions were mostly unchanged suggesting that the data is of high quality.
 
 After normalization, integration, and clustering, a UMAP plot revealed 36 distinct cell populations. Cells formed well separated clusters with minimal overlap between groups. Coloring cells by tissue of origin showed that all three tissues including Respiratory Mucosa (RM), Olfactory Mucosa (OM), and Lateral Nasal Gland (LNG) contributed cells across most clusters, with some tissue specific clustering visible such as in the later annotated neuronal cluster which was predominantly OM derived. Coloring by timepoint showed that all five timepoints were distributed across all clusters without strong separation by timepoint, indicating that Harmony integration properly corrected for batch effects and that cells clustered by cell type rather than sample.
