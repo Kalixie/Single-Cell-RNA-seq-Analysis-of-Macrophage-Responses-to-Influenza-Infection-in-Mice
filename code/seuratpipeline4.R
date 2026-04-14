@@ -175,6 +175,7 @@ pseudo_macro <- AggregateExpression(macro,
 Idents(pseudo_macro) <- "timepoint"
 
 # DE with DESeq2
+
 macro.de <- FindMarkers(pseudo_macro,
   ident.1 = "D02",
   ident.2 = "D05",
