@@ -58,7 +58,7 @@ The majority of cells in the Seurat object displayed between 1,000 and 3,500 det
 
 </div>
 
-##### Figure 2: Figure 2: UMAP plot of all cells colored by cluster number. Each point represents a single cell following Uniform Manifold Approximation and Projection and Harmony integration. Cluster numbers are displayed for each cluster.
+##### Figure 2: UMAP plot of all cells colored by cluster number. Each point represents a single cell following Uniform Manifold Approximation and Projection and Harmony integration. Cluster numbers are displayed for each cluster.
 
 <div align="center">
 
